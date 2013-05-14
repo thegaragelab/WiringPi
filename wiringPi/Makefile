@@ -105,7 +105,7 @@ install:	$(DYNAMIC)
 	@install -m 0755 libwiringPi.so.$(VERSION)		  $(DESTDIR)$(PREFIX)/lib
 	@ln -sf $(DESTDIR)$(PREFIX)/lib/libwiringPi.so.$(VERSION) $(DESTDIR)/lib/libwiringPi.so
 	@ln -sf $(DESTDIR)$(PREFIX)/lib/libwiringPi.so.$(VERSION) $(DESTDIR)/lib/libwiringPi.so.1
-	@ldconfig
+#	@ldconfig
 
 .PHONEY:	install-static
 install-static:	$(STATIC)
@@ -127,7 +127,7 @@ uninstall:
 	@rm -f $(DESTDIR)$(PREFIX)/include/wiringPiSPI.h
 	@rm -f $(DESTDIR)$(PREFIX)/include/wiringPiI2C.h
 	@rm -f $(DESTDIR)$(PREFIX)/lib/libwiringPi.*
-	@ldconfig
+#	@ldconfig
 
 
 .PHONEY:	depend
